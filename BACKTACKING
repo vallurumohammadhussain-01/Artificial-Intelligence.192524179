@@ -1,0 +1,104 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNz0oIFthyh59cFAAcchUwo",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/BACKTACKING\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Variables (Students)\n",
+        "students = [\"A\", \"B\", \"C\"]\n",
+        "\n",
+        "# Domain (Available Seats)\n",
+        "seats = [1, 2, 3]\n",
+        "\n",
+        "# Dictionary to store assignments\n",
+        "assignment = {}\n",
+        "\n",
+        "# Function to check whether assigning a seat is valid\n",
+        "def is_valid(student, seat):\n",
+        "    # Constraint 1: A cannot sit in Seat 2\n",
+        "    if student == \"A\" and seat == 2:\n",
+        "        return False\n",
+        "\n",
+        "    # Constraint 2: No two students can have the same seat\n",
+        "    if seat in assignment.values():\n",
+        "        return False\n",
+        "\n",
+        "    return True\n",
+        "\n",
+        "# Backtracking algorithm\n",
+        "def backtrack(index):\n",
+        "    # If all students are assigned\n",
+        "    if index == len(students):\n",
+        "        return True\n",
+        "\n",
+        "    student = students[index]\n",
+        "\n",
+        "    # Try every seat\n",
+        "    for seat in seats:\n",
+        "        if is_valid(student, seat):\n",
+        "            assignment[student] = seat\n",
+        "\n",
+        "            if backtrack(index + 1):\n",
+        "                return True\n",
+        "\n",
+        "            # Backtrack\n",
+        "            del assignment[student]\n",
+        "\n",
+        "    return False\n",
+        "\n",
+        "# Solve the CSP\n",
+        "if backtrack(0):\n",
+        "    print(\"Solution Found:\")\n",
+        "    for student, seat in assignment.items():\n",
+        "        print(f\"{student} --> Seat {seat}\")\n",
+        "else:\n",
+        "    print(\"No solution exists.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "T56B-FDpGhkf",
+        "outputId": "b26bb155-888a-4668-92ee-46c38a2e1526"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Solution Found:\n",
+            "A --> Seat 1\n",
+            "B --> Seat 2\n",
+            "C --> Seat 3\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
