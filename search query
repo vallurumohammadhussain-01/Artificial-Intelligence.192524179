@@ -1,0 +1,125 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyP7dJQ7Xy4t4CJNjrLofu6X",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/search%20query\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from sklearn.feature_extraction.text import TfidfVectorizer\n",
+        "from sklearn.metrics.pairwise import cosine_similarity\n",
+        "\n",
+        "# -----------------------------\n",
+        "# Sample Web Pages (Documents)\n",
+        "# -----------------------------\n",
+        "documents = [\n",
+        "    \"Python is a programming language used for AI and Machine Learning.\",\n",
+        "    \"Docker is a containerization platform used for deploying applications.\",\n",
+        "    \"Convolutional Neural Networks are used in image classification.\",\n",
+        "    \"Machine Learning includes supervised and unsupervised learning.\",\n",
+        "    \"Deep Learning is a subset of Machine Learning.\"\n",
+        "]\n",
+        "\n",
+        "# -----------------------------\n",
+        "# User Search Query\n",
+        "# -----------------------------\n",
+        "query = input(\"Enter your search query: \")\n",
+        "\n",
+        "# -----------------------------\n",
+        "# Convert text into TF-IDF vectors\n",
+        "# -----------------------------\n",
+        "vectorizer = TfidfVectorizer()\n",
+        "\n",
+        "all_text = documents + [query]\n",
+        "\n",
+        "tfidf_matrix = vectorizer.fit_transform(all_text)\n",
+        "\n",
+        "# -----------------------------\n",
+        "# Calculate Similarity\n",
+        "# -----------------------------\n",
+        "query_vector = tfidf_matrix[-1]\n",
+        "\n",
+        "document_vectors = tfidf_matrix[:-1]\n",
+        "\n",
+        "similarity = cosine_similarity(query_vector, document_vectors)\n",
+        "\n",
+        "# -----------------------------\n",
+        "# Rank Documents\n",
+        "# -----------------------------\n",
+        "scores = similarity.flatten()\n",
+        "\n",
+        "ranked = sorted(enumerate(scores),\n",
+        "                key=lambda x: x[1],\n",
+        "                reverse=True)\n",
+        "\n",
+        "# -----------------------------\n",
+        "# Display Results\n",
+        "# -----------------------------\n",
+        "print(\"\\nTop Search Results\\n\")\n",
+        "\n",
+        "for index, score in ranked:\n",
+        "    print(f\"Score: {score:.3f}\")\n",
+        "    print(documents[index])\n",
+        "    print(\"-\"*60)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-oENQ_JeHptQ",
+        "outputId": "8a00d37f-4466-4bdc-8f0d-3649c92fa0c5"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter your search query: machine learning\n",
+            "\n",
+            "Top Search Results\n",
+            "\n",
+            "Score: 0.550\n",
+            "Deep Learning is a subset of Machine Learning.\n",
+            "------------------------------------------------------------\n",
+            "Score: 0.540\n",
+            "Machine Learning includes supervised and unsupervised learning.\n",
+            "------------------------------------------------------------\n",
+            "Score: 0.317\n",
+            "Python is a programming language used for AI and Machine Learning.\n",
+            "------------------------------------------------------------\n",
+            "Score: 0.000\n",
+            "Docker is a containerization platform used for deploying applications.\n",
+            "------------------------------------------------------------\n",
+            "Score: 0.000\n",
+            "Convolutional Neural Networks are used in image classification.\n",
+            "------------------------------------------------------------\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
