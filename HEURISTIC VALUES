@@ -1,0 +1,83 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPD+owxAuVYXhAX2kOhgB5k",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/HEURISTIC%20VALUES\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Heuristic values (estimated distance to goal)\n",
+        "\n",
+        "heuristic = {\n",
+        "    'A': 10,\n",
+        "    'B': 6,\n",
+        "    'C': 3,\n",
+        "    'Goal': 0\n",
+        "}\n",
+        "\n",
+        "print(\"Heuristic Values:\")\n",
+        "for node in heuristic:\n",
+        "    print(node, \":\", heuristic[node])\n",
+        "\n",
+        "best = min(heuristic, key=heuristic.get)\n",
+        "\n",
+        "print(\"\\nBest Node to Visit:\", best)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "E-TvIL5AGkW5",
+        "outputId": "c42892f3-028f-4bdf-f5e2-582898381e6b"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Heuristic Values:\n",
+            "A : 10\n",
+            "B : 6\n",
+            "C : 3\n",
+            "Goal : 0\n",
+            "\n",
+            "Best Node to Visit: Goal\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "T56B-FDpGhkf"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
