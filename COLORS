@@ -1,0 +1,75 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMP0ViiRkum7EBvG/biT/NM",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/COLORS\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "colors = [\"Red\", \"Green\", \"Blue\"]\n",
+        "\n",
+        "for stateA in colors:\n",
+        "    for stateB in colors:\n",
+        "\n",
+        "        # Constraint: Adjacent states cannot have same color\n",
+        "        if stateA != stateB:\n",
+        "            print(\"State A =\", stateA,\n",
+        "                  \"State B =\", stateB)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nZjDXdjeGKAh",
+        "outputId": "187866f8-5d43-4590-bf01-ae0f63847c80"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "State A = Red State B = Green\n",
+            "State A = Red State B = Blue\n",
+            "State A = Green State B = Red\n",
+            "State A = Green State B = Blue\n",
+            "State A = Blue State B = Red\n",
+            "State A = Blue State B = Green\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "drUqf8YgGHQN"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
