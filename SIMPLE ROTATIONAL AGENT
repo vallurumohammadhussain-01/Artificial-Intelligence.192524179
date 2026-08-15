@@ -1,0 +1,88 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMMciJ2wKx8mkBNrVzm9kkk",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/SIMPLE%20ROTATIONAL%20AGENT\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UChyO8flElS_",
+        "outputId": "7fa95101-a9b7-410e-dfdd-7a0cc55a7930"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Robot Starts at: (0, 0)\n",
+            "Move Right\n",
+            "Move Right\n",
+            "\n",
+            "Target Reached!\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Simple Rational Agent Example\n",
+        "\n",
+        "# Environment\n",
+        "grid = [\n",
+        "    ['R', ' ', 'T'],\n",
+        "    ['X', 'X', ' '],\n",
+        "    [' ', ' ', ' ']\n",
+        "]\n",
+        "\n",
+        "# Robot position\n",
+        "row = 0\n",
+        "col = 0\n",
+        "\n",
+        "# Target\n",
+        "target = (0,2)\n",
+        "\n",
+        "print(\"Robot Starts at:\", (row,col))\n",
+        "\n",
+        "# Rational Agent Logic\n",
+        "while (row,col) != target:\n",
+        "\n",
+        "    # Move Right if possible\n",
+        "    if col < 2 and grid[row][col+1] != 'X':\n",
+        "        col += 1\n",
+        "        print(\"Move Right\")\n",
+        "\n",
+        "    # Otherwise Move Down\n",
+        "    elif row < 2 and grid[row+1][col] != 'X':\n",
+        "        row += 1\n",
+        "        print(\"Move Down\")\n",
+        "\n",
+        "print(\"\\nTarget Reached!\")"
+      ]
+    }
+  ]
+}
