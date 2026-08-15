@@ -1,0 +1,64 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM1VeltJftC/afDmr14Idv6",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/KNOWLEDGE%20%20BASE\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Knowledge Base\n",
+        "attendance = 80\n",
+        "marks = 65\n",
+        "\n",
+        "# Reasoning\n",
+        "if attendance >= 75 and marks >= 50:\n",
+        "    print(\"Knowledge: Attendance and marks satisfy the rules.\")\n",
+        "    print(\"Reasoning: Student is eligible for the exam.\")\n",
+        "else:\n",
+        "    print(\"Knowledge: Requirements are not met.\")\n",
+        "    print(\"Reasoning: Student is not eligible.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "naAbq-C_IlY7",
+        "outputId": "9896554a-7288-4166-b1f8-2483a4e4f60a"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Knowledge: Attendance and marks satisfy the rules.\n",
+            "Reasoning: Student is eligible for the exam.\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
