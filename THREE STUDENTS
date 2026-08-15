@@ -1,0 +1,72 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyP54MPn1mEzlzDCEmLscis/",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/THREE%20STUDENTS\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import itertools\n",
+        "\n",
+        "students = ['A', 'B', 'C']\n",
+        "seats = [1, 2, 3]\n",
+        "\n",
+        "valid_assignments = []\n",
+        "\n",
+        "for assignment in itertools.permutations(seats):\n",
+        "    A, B, C = assignment\n",
+        "\n",
+        "    # Constraints\n",
+        "    if A != 2 and B > C:\n",
+        "        valid_assignments.append((A, B, C))\n",
+        "\n",
+        "print(\"Valid Seat Assignments:\")\n",
+        "\n",
+        "for A, B, C in valid_assignments:\n",
+        "    print(\"A -> Seat\", A, \", B -> Seat\", B, \", C -> Seat\", C)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5l_av9raHF3F",
+        "outputId": "0b96e79a-00ad-4f73-ba24-efd9d9d44a39"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Valid Seat Assignments:\n",
+            "A -> Seat 1 , B -> Seat 3 , C -> Seat 2\n",
+            "A -> Seat 3 , B -> Seat 2 , C -> Seat 1\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
