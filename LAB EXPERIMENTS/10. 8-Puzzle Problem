@@ -1,0 +1,105 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOBUt6E+7o3j4euLrlkKku9",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/10.%208-Puzzle%20Problem\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from collections import deque\n",
+        "\n",
+        "start = tuple(map(int, input(\"Enter 9 numbers (0 for blank): \").split()))\n",
+        "goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)\n",
+        "\n",
+        "q = deque([(start, [])])\n",
+        "visited = {start}\n",
+        "\n",
+        "moves = [-3, 3, -1, 1]\n",
+        "\n",
+        "while q:\n",
+        "    state, path = q.popleft()\n",
+        "\n",
+        "    if state == goal:\n",
+        "        print(\"Solution:\")\n",
+        "        for p in path:\n",
+        "            print(p)\n",
+        "        break\n",
+        "\n",
+        "    zero = state.index(0)\n",
+        "    row = zero // 3\n",
+        "    col = zero % 3\n",
+        "\n",
+        "    for m in moves:\n",
+        "        new = zero + m\n",
+        "\n",
+        "        if 0 <= new < 9:\n",
+        "            if m == -1 and col == 0:\n",
+        "                continue\n",
+        "            if m == 1 and col == 2:\n",
+        "                continue\n",
+        "\n",
+        "            s = list(state)\n",
+        "            s[zero], s[new] = s[new], s[zero]\n",
+        "            s = tuple(s)\n",
+        "\n",
+        "            if s not in visited:\n",
+        "                visited.add(s)\n",
+        "                q.append((s, path + [s]))\n",
+        "\n",
+        "else:\n",
+        "    print(\"No solution\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "k4usYLuRAOwQ",
+        "outputId": "0cffcc15-0257-45fd-c0e1-d83d99fa0fed"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter 9 numbers (0 for blank): 1 2 3 4  5 6 7 0 8\n",
+            "Solution:\n",
+            "(1, 2, 3, 4, 5, 6, 7, 8, 0)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "tGXmiIJTAOhi"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
