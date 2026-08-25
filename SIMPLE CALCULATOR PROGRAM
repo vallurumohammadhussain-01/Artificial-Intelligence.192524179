@@ -1,0 +1,79 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM8dBeOvZES8kAXotlAIj/C",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/SIMPLE%20CALCULATOR%20PROGRAM\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "A4A8_3bV8JSW",
+        "outputId": "97277cba-3649-4308-f53f-b376ebb07c43"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter first number: 10\n",
+            "Enter second number: 5\n",
+            "1. Addition\n",
+            "2. Subtraction\n",
+            "3. Multiplication\n",
+            "4. Division\n",
+            "Enter choice: 3\n",
+            "Result = 50.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "a = float(input(\"Enter first number: \"))\n",
+        "b = float(input(\"Enter second number: \"))\n",
+        "\n",
+        "print(\"1. Addition\")\n",
+        "print(\"2. Subtraction\")\n",
+        "print(\"3. Multiplication\")\n",
+        "print(\"4. Division\")\n",
+        "\n",
+        "ch = int(input(\"Enter choice: \"))\n",
+        "\n",
+        "if ch == 1:\n",
+        "    print(\"Result =\", a + b)\n",
+        "elif ch == 2:\n",
+        "    print(\"Result =\", a - b)\n",
+        "elif ch == 3:\n",
+        "    print(\"Result =\", a * b)\n",
+        "elif ch == 4:\n",
+        "    print(\"Result =\", a / b)\n",
+        "else:\n",
+        "    print(\"Invalid choice\")"
+      ]
+    }
+  ]
+}
