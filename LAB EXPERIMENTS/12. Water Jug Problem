@@ -1,0 +1,96 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyONiYkmxfTZTd45AauzVazv",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/12.%20Water%20Jug%20Problem\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from collections import deque\n",
+        "\n",
+        "a = int(input(\"Enter capacity of jug A: \"))\n",
+        "b = int(input(\"Enter capacity of jug B: \"))\n",
+        "target = int(input(\"Enter target amount: \"))\n",
+        "\n",
+        "q = deque([((0, 0), [])])\n",
+        "visited = {(0, 0)}\n",
+        "\n",
+        "while q:\n",
+        "    (x, y), path = q.popleft()\n",
+        "\n",
+        "    if x == target or y == target:\n",
+        "        print(\"Steps:\")\n",
+        "        for step in path:\n",
+        "            print(step)\n",
+        "        break\n",
+        "\n",
+        "    states = [\n",
+        "        (a, y, \"Fill A\"),\n",
+        "        (x, b, \"Fill B\"),\n",
+        "        (0, y, \"Empty A\"),\n",
+        "        (x, 0, \"Empty B\")\n",
+        "    ]\n",
+        "\n",
+        "    pour = min(x, b-y)\n",
+        "    states.append((x-pour, y+pour, \"Pour A to B\"))\n",
+        "\n",
+        "    pour = min(y, a-x)\n",
+        "    states.append((x+pour, y-pour, \"Pour B to A\"))\n",
+        "\n",
+        "    for nx, ny, action in states:\n",
+        "        if (nx, ny) not in visited:\n",
+        "            visited.add((nx, ny))\n",
+        "            q.append(((nx, ny), path + [action]))\n",
+        "else:\n",
+        "    print(\"No solution\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ini3HelqBOrK",
+        "outputId": "cf969880-ebd9-4b70-e4f1-23992ef52356"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter capacity of jug A: 4\n",
+            "Enter capacity of jug B: 3\n",
+            "Enter target amount: 2\n",
+            "Steps:\n",
+            "Fill B\n",
+            "Pour B to A\n",
+            "Fill B\n",
+            "Pour B to A\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
