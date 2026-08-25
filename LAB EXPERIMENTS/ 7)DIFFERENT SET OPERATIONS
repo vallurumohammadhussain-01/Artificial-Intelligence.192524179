@@ -1,0 +1,73 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNE7ESwYP26RWWOAmZ9WkdQ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/%207)DIFFERENT%20SET%20OPERATIONS\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "A = {1, 2, 3, 4}\n",
+        "B = {3, 4, 5, 6}\n",
+        "\n",
+        "print(\"Union:\", A | B)\n",
+        "print(\"Intersection:\", A & B)\n",
+        "print(\"Difference A-B:\", A - B)\n",
+        "print(\"Difference B-A:\", B - A)\n",
+        "print(\"Symmetric Difference:\", A ^ B)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HflSu05T_4My",
+        "outputId": "af485d44-6c3c-40b7-a931-c17466a3d080"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Union: {1, 2, 3, 4, 5, 6}\n",
+            "Intersection: {3, 4}\n",
+            "Difference A-B: {1, 2}\n",
+            "Difference B-A: {5, 6}\n",
+            "Symmetric Difference: {1, 2, 5, 6}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "oOTEvWW8_sPe"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
