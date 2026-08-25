@@ -1,0 +1,101 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOU+2AoNYEoc1BZQcGs1hlb",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/14.%20Missionaries%20and%20Cannibals%20Problem\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from collections import deque\n",
+        "\n",
+        "start = (3, 3, 0)\n",
+        "goal = (0, 0, 1)\n",
+        "\n",
+        "q = deque([(start, [])])\n",
+        "visited = {start}\n",
+        "\n",
+        "def valid(m, c):\n",
+        "    return (m == 0 or m >= c) and (m == 3 or (3-m) >= (3-c))\n",
+        "\n",
+        "while q:\n",
+        "    state, path = q.popleft()\n",
+        "    m, c, boat = state\n",
+        "\n",
+        "    if state == goal:\n",
+        "        print(\"Solution:\")\n",
+        "        for x in path:\n",
+        "            print(x)\n",
+        "        break\n",
+        "\n",
+        "    moves = [(1,0), (2,0), (0,1), (0,2), (1,1)]\n",
+        "\n",
+        "    for dm, dc in moves:\n",
+        "        if boat == 0:\n",
+        "            nm, nc = m-dm, c-dc\n",
+        "            nb = 1\n",
+        "            action = f\"Send {dm}M {dc}C\"\n",
+        "        else:\n",
+        "            nm, nc = m+dm, c+dc\n",
+        "            nb = 0\n",
+        "            action = f\"Return {dm}M {dc}C\"\n",
+        "\n",
+        "        if 0 <= nm <= 3 and 0 <= nc <= 3 and valid(nm, nc):\n",
+        "            new = (nm, nc, nb)\n",
+        "            if new not in visited:\n",
+        "                visited.add(new)\n",
+        "                q.append((new, path + [action]))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "79yV4sKDB-RQ",
+        "outputId": "6d8a92ce-c1f3-496f-b674-3eb444b6d5e3"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Solution:\n",
+            "Send 0M 2C\n",
+            "Return 0M 1C\n",
+            "Send 0M 2C\n",
+            "Return 0M 1C\n",
+            "Send 2M 0C\n",
+            "Return 1M 1C\n",
+            "Send 2M 0C\n",
+            "Return 0M 1C\n",
+            "Send 0M 2C\n",
+            "Return 1M 0C\n",
+            "Send 1M 1C\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
