@@ -1,0 +1,73 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNA9Trf8Dvz6cuNq0zao5vf",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/9.%20Remove%20Punctuations%20from%20String\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import string\n",
+        "\n",
+        "s = input(\"Enter a string: \")\n",
+        "\n",
+        "result = \"\"\n",
+        "\n",
+        "for ch in s:\n",
+        "    if ch not in string.punctuation:\n",
+        "        result += ch\n",
+        "\n",
+        "print(\"After removing punctuation:\", result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "k4usYLuRAOwQ",
+        "outputId": "c2103083-fe93-4cf6-bbe0-9127bc53899e"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a string: Hello, World! How are you?\n",
+            "After removing punctuation: Hello World How are you\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "tGXmiIJTAOhi"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
