@@ -1,0 +1,80 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMrAoxCO92Nqi/OqBuqttLs",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/16.%20Breadth%20First%20Search%20(BFS)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from collections import deque\n",
+        "\n",
+        "graph = {\n",
+        "    'A': ['B', 'C'],\n",
+        "    'B': ['D', 'E'],\n",
+        "    'C': ['F'],\n",
+        "    'D': [],\n",
+        "    'E': [],\n",
+        "    'F': []\n",
+        "}\n",
+        "\n",
+        "start = input(\"Enter starting node: \")\n",
+        "\n",
+        "visited = set()\n",
+        "q = deque([start])\n",
+        "\n",
+        "print(\"BFS:\", end=\" \")\n",
+        "\n",
+        "while q:\n",
+        "    node = q.popleft()\n",
+        "\n",
+        "    if node not in visited:\n",
+        "        print(node, end=\" \")\n",
+        "        visited.add(node)\n",
+        "\n",
+        "        for x in graph[node]:\n",
+        "            q.append(x)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DWxJo4q5CbWo",
+        "outputId": "d320732a-e240-4546-db38-8ed48be1a049"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter starting node: A\n",
+            "BFS: A B C D E F "
+          ]
+        }
+      ]
+    }
+  ]
+}
