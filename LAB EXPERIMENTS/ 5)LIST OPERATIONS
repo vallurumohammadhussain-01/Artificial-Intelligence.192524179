@@ -1,0 +1,73 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNKfx3W6FUJiOxowtKQrUS9",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/%205)LIST%20OPERATIONS\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "A4A8_3bV8JSW",
+        "outputId": "1c6008e1-b5b0-416f-fe7d-7596b81a6e44"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Nested List: [[10, 20, 30], [40, 50]]\n",
+            "Length: 3\n",
+            "Concatenation: [10, 20, 30, 40, 50]\n",
+            "20 in list: True\n",
+            "Iteration:\n",
+            "10 20 30 \n",
+            "Indexing: 20\n",
+            "Slicing: [10, 20]\n"
+          ]
+        }
+      ],
+      "source": [
+        "a = [10, 20, 30]\n",
+        "b = [40, 50]\n",
+        "\n",
+        "print(\"Nested List:\", [a, b])\n",
+        "print(\"Length:\", len(a))\n",
+        "print(\"Concatenation:\", a + b)\n",
+        "print(\"20 in list:\", 20 in a)\n",
+        "\n",
+        "print(\"Iteration:\")\n",
+        "for x in a:\n",
+        "    print(x, end=\" \")\n",
+        "\n",
+        "print(\"\\nIndexing:\", a[1])\n",
+        "print(\"Slicing:\", a[0:2])"
+      ]
+    }
+  ]
+}
