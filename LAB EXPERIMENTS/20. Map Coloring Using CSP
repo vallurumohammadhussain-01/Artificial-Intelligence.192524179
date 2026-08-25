@@ -1,0 +1,95 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPSVl1d0pU+PrsJM07sScUf",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/20.%20Map%20Coloring%20Using%20CSP\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "colors = [\"Red\", \"Green\", \"Blue\"]\n",
+        "\n",
+        "graph = {\n",
+        "    \"A\": [\"B\", \"C\"],\n",
+        "    \"B\": [\"A\", \"C\", \"D\"],\n",
+        "    \"C\": [\"A\", \"B\", \"D\"],\n",
+        "    \"D\": [\"B\", \"C\"]\n",
+        "}\n",
+        "\n",
+        "color = {}\n",
+        "\n",
+        "def safe(node, c):\n",
+        "    for neighbor in graph[node]:\n",
+        "        if neighbor in color and color[neighbor] == c:\n",
+        "            return False\n",
+        "    return True\n",
+        "\n",
+        "def solve(nodes):\n",
+        "    if not nodes:\n",
+        "        return True\n",
+        "\n",
+        "    node = nodes[0]\n",
+        "\n",
+        "    for c in colors:\n",
+        "        if safe(node, c):\n",
+        "            color[node] = c\n",
+        "\n",
+        "            if solve(nodes[1:]):\n",
+        "                return True\n",
+        "\n",
+        "            del color[node]\n",
+        "\n",
+        "    return False\n",
+        "\n",
+        "solve(list(graph.keys()))\n",
+        "\n",
+        "print(\"Map Coloring:\")\n",
+        "for node in graph:\n",
+        "    print(node, \"->\", color[node])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bm1-LBW9DYHu",
+        "outputId": "5b1cde81-54ef-40ce-babd-cceadc51e1d7"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Map Coloring:\n",
+            "A -> Red\n",
+            "B -> Green\n",
+            "C -> Blue\n",
+            "D -> Red\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
