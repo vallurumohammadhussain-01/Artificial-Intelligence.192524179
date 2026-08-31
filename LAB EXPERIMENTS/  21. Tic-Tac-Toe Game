@@ -1,0 +1,112 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPK6Efsr871DndKUgNhgPPd",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/%20%2021.%20Tic-Tac-Toe%20Game\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "board = [\" \" for i in range(9)]\n",
+        "\n",
+        "def display():\n",
+        "    for i in range(0, 9, 3):\n",
+        "        print(board[i], \"|\", board[i+1], \"|\", board[i+2])\n",
+        "\n",
+        "player = \"X\"\n",
+        "\n",
+        "for turn in range(9):\n",
+        "    display()\n",
+        "\n",
+        "    pos = int(input(\"Enter position (1-9): \")) - 1\n",
+        "\n",
+        "    if board[pos] == \" \":\n",
+        "        board[pos] = player\n",
+        "\n",
+        "        if player == \"X\":\n",
+        "            player = \"O\"\n",
+        "        else:\n",
+        "            player = \"X\"\n",
+        "\n",
+        "display()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3O-qbgZlz7y8",
+        "outputId": "138d960a-5f55-43b1-e6a1-05b03f0f0d3b"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  |   |  \n",
+            "  |   |  \n",
+            "  |   |  \n",
+            "Enter position (1-9): 1\n",
+            "X |   |  \n",
+            "  |   |  \n",
+            "  |   |  \n",
+            "Enter position (1-9): 5\n",
+            "X |   |  \n",
+            "  | O |  \n",
+            "  |   |  \n",
+            "Enter position (1-9): 4\n",
+            "X |   |  \n",
+            "X | O |  \n",
+            "  |   |  \n",
+            "Enter position (1-9): 7\n",
+            "X |   |  \n",
+            "X | O |  \n",
+            "O |   |  \n",
+            "Enter position (1-9): 9\n",
+            "X |   |  \n",
+            "X | O |  \n",
+            "O |   | X\n",
+            "Enter position (1-9): 8\n",
+            "X |   |  \n",
+            "X | O |  \n",
+            "O | O | X\n",
+            "Enter position (1-9): 3\n",
+            "X |   | X\n",
+            "X | O |  \n",
+            "O | O | X\n",
+            "Enter position (1-9): 2\n",
+            "X | O | X\n",
+            "X | O |  \n",
+            "O | O | X\n",
+            "Enter position (1-9): 9\n",
+            "X | O | X\n",
+            "X | O |  \n",
+            "O | O | X\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
