@@ -1,0 +1,73 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMrOZ4JiUKl14gwy56ZQtSa",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/%20%2013.%20Crypt-Arithmetic%20Problem\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from itertools import permutations\n",
+        "\n",
+        "letters = \"SENDMORY\"\n",
+        "\n",
+        "for p in permutations(range(10), 8):\n",
+        "    d = dict(zip(letters, p))\n",
+        "\n",
+        "    if d[\"S\"] == 0 or d[\"M\"] == 0:\n",
+        "        continue\n",
+        "\n",
+        "    send = 1000*d[\"S\"] + 100*d[\"E\"] + 10*d[\"N\"] + d[\"D\"]\n",
+        "    more = 1000*d[\"M\"] + 100*d[\"O\"] + 10*d[\"R\"] + d[\"E\"]\n",
+        "    money = 10000*d[\"M\"] + 1000*d[\"O\"] + 100*d[\"N\"] + 10*d[\"E\"] + d[\"Y\"]\n",
+        "\n",
+        "    if send + more == money:\n",
+        "        print(\"SEND =\", send)\n",
+        "        print(\"MORE =\", more)\n",
+        "        print(\"MONEY =\", money)\n",
+        "        break"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sQicgbhCymP1",
+        "outputId": "569f15ea-f98e-4db8-9eba-95ed8a8b61c3"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "SEND = 9567\n",
+            "MORE = 1085\n",
+            "MONEY = 10652\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
