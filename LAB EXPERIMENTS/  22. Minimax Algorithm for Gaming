@@ -1,0 +1,72 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOrGFGVEGPeXeF5OE+McjAe",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/%20%2022.%20Minimax%20Algorithm%20for%20Gaming\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def minimax(depth, index, maximizing, values):\n",
+        "\n",
+        "    if depth == 3:\n",
+        "        return values[index]\n",
+        "\n",
+        "    if maximizing:\n",
+        "        return max(\n",
+        "            minimax(depth + 1, index * 2, False, values),\n",
+        "            minimax(depth + 1, index * 2 + 1, False, values)\n",
+        "        )\n",
+        "\n",
+        "    return min(\n",
+        "        minimax(depth + 1, index * 2, True, values),\n",
+        "        minimax(depth + 1, index * 2 + 1, True, values)\n",
+        "    )\n",
+        "\n",
+        "\n",
+        "values = [3, 5, 6, 9, 1, 2, 0, -1]\n",
+        "\n",
+        "print(\"Optimal value:\", minimax(0, 0, True, values))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EDeW5i5Z0TyF",
+        "outputId": "c41033a5-73fd-4be5-bb76-714c7091efc3"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Optimal value: 5\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
