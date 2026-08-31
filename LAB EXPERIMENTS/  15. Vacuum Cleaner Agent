@@ -1,0 +1,67 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNhXVR3R4fzMPW2A2uFWiu9",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/%20%2015.%20Vacuum%20Cleaner%20Agent\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "location = input(\"Enter location (A/B): \")\n",
+        "status = input(\"Enter status (Dirty/Clean): \")\n",
+        "\n",
+        "if status == \"Dirty\":\n",
+        "    print(\"Action: SUCK\")\n",
+        "else:\n",
+        "    print(\"Action: MOVE\")\n",
+        "\n",
+        "if location == \"A\":\n",
+        "    print(\"Move to B\")\n",
+        "else:\n",
+        "    print(\"Move to A\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cu-r7sEMy77K",
+        "outputId": "5b8d2ea6-c28f-4de3-e145-f8a8225cad3e"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter location (A/B): A\n",
+            "Enter status (Dirty/Clean): DIRTY\n",
+            "Action: MOVE\n",
+            "Move to B\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
