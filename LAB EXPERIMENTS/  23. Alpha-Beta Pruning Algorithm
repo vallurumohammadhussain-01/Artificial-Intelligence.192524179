@@ -1,0 +1,105 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNN9CfEI08P79GunSoUMiM0",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/%20%2023.%20Alpha-Beta%20Pruning%20Algorithm\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def minimax(depth, node, maximizing, values, alpha, beta):\n",
+        "\n",
+        "    if depth == 3:\n",
+        "        return values[node]\n",
+        "\n",
+        "    if maximizing:\n",
+        "        best = -1000\n",
+        "\n",
+        "        for i in range(2):\n",
+        "            value = minimax(\n",
+        "                depth + 1,\n",
+        "                node * 2 + i,\n",
+        "                False,\n",
+        "                values,\n",
+        "                alpha,\n",
+        "                beta\n",
+        "            )\n",
+        "\n",
+        "            best = max(best, value)\n",
+        "            alpha = max(alpha, best)\n",
+        "\n",
+        "            if beta <= alpha:\n",
+        "                break\n",
+        "\n",
+        "        return best\n",
+        "\n",
+        "    else:\n",
+        "        best = 1000\n",
+        "\n",
+        "        for i in range(2):\n",
+        "            value = minimax(\n",
+        "                depth + 1,\n",
+        "                node * 2 + i,\n",
+        "                True,\n",
+        "                values,\n",
+        "                alpha,\n",
+        "                beta\n",
+        "            )\n",
+        "\n",
+        "            best = min(best, value)\n",
+        "            beta = min(beta, best)\n",
+        "\n",
+        "            if beta <= alpha:\n",
+        "                break\n",
+        "\n",
+        "        return best\n",
+        "\n",
+        "\n",
+        "values = [3, 5, 6, 9, 1, 2, 0, -1]\n",
+        "\n",
+        "result = minimax(0, 0, True, values, -1000, 1000)\n",
+        "\n",
+        "print(\"Optimal value:\", result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SkiJKyqj0kmw",
+        "outputId": "d24bdb88-adb2-4f5d-f6f5-8b32d71d21aa"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Optimal value: 5\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
