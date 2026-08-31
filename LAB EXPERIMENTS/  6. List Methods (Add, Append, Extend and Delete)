@@ -1,0 +1,72 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN35D5N9NnOmvqRstecmkaQ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/%20%206.%20List%20Methods%20(Add%2C%20Append%2C%20Extend%20and%20Delete)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "lst = [1, 2, 3]\n",
+        "\n",
+        "lst.append(4)\n",
+        "print(\"After Append:\", lst)\n",
+        "\n",
+        "lst.extend([5, 6])\n",
+        "print(\"After Extend:\", lst)\n",
+        "\n",
+        "lst.insert(1, 10)\n",
+        "print(\"After Insert:\", lst)\n",
+        "\n",
+        "lst.remove(2)\n",
+        "print(\"After Remove:\", lst)\n",
+        "\n",
+        "del lst[0]\n",
+        "print(\"After Delete:\", lst)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "OPf9lKXxySnF",
+        "outputId": "7b1506ae-c187-44fe-fcb6-addd7c3dd1ad"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "After Append: [1, 2, 3, 4]\n",
+            "After Extend: [1, 2, 3, 4, 5, 6]\n",
+            "After Insert: [1, 10, 2, 3, 4, 5, 6]\n",
+            "After Remove: [1, 10, 3, 4, 5, 6]\n",
+            "After Delete: [10, 3, 4, 5, 6]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
