@@ -1,0 +1,66 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyO/AcOcq1CRo9/1L8MAKJxU",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/%20%204)%20Sort%20Words%20in%20a%20Sentence%20Alphabetically\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "M9HmwUuivEec",
+        "outputId": "ca4c995f-fca0-4428-962a-ae3a2c64691c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a sentence: python is easy to learn\n",
+            "Sorted words:\n",
+            "easy\n",
+            "is\n",
+            "learn\n",
+            "python\n",
+            "to\n"
+          ]
+        }
+      ],
+      "source": [
+        "sentence = input(\"Enter a sentence: \")\n",
+        "\n",
+        "words = sentence.split()PendingDeprecationWarning\n",
+        "words.sort()\n",
+        "\n",
+        "print(\"Sorted words:\")\n",
+        "for word in words:\n",
+        "    print(word)"
+      ]
+    }
+  ]
+}
