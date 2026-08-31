@@ -1,0 +1,90 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOa3/ePlrmHapPfjo0+rvfp",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/2)ADD%20OF%202%20MATRICES\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "M9HmwUuivEec"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "r = int(input(\"Enter rows: \"))\n",
+        "c = int(input(\"Enter columns: \"))\n",
+        "\n",
+        "A = []\n",
+        "B = []\n",
+        "\n",
+        "print(\"Enter first matrix:\")\n",
+        "for i in range(r):\n",
+        "    A.append(list(map(int, input().split())))\n",
+        "\n",
+        "print(\"Enter second matrix:\")\n",
+        "for i in range(r):\n",
+        "    B.append(list(map(int, input().split())))\n",
+        "\n",
+        "print(\"Sum Matrix:\")\n",
+        "for i in range(r):\n",
+        "    for j in range(c):\n",
+        "        print(A[i][j] + B[i][j], end=\" \")\n",
+        "    print()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4xOwJQ0Gwf7j",
+        "outputId": "32f00a3a-42d5-4d5c-aa8c-a5a910015d34"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter rows: 2\n",
+            "Enter columns: 2\n",
+            "Enter first matrix:\n",
+            "2 2\n",
+            "3 4\n",
+            "Enter second matrix:\n",
+            "1 2\n",
+            "5 6\n",
+            "Sum Matrix:\n",
+            "3 4 \n",
+            "8 10 \n"
+          ]
+        }
+      ]
+    }
+  ]
+}
