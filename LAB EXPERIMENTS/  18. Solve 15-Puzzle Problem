@@ -1,0 +1,99 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMhNp6qdgdzPVCglO/xSsYK",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vallurumohammadhussain-01/Artificial-Intelligence.192524179/blob/main/LAB%20EXPERIMENTS/%20%2018.%20Solve%2015-Puzzle%20Problem\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from collections import deque\n",
+        "\n",
+        "start = (1, 2, 3, 4,\n",
+        "         5, 6, 7, 8,\n",
+        "         9, 10, 11, 12,\n",
+        "         13, 14, 0, 15)\n",
+        "\n",
+        "goal = (1, 2, 3, 4,\n",
+        "        5, 6, 7, 8,\n",
+        "        9, 10, 11, 12,\n",
+        "        13, 14, 15, 0)\n",
+        "\n",
+        "queue = deque([(start, [])])\n",
+        "visited = set()\n",
+        "\n",
+        "while queue:\n",
+        "    state, path = queue.popleft()\n",
+        "\n",
+        "    if state == goal:\n",
+        "        print(\"Solution:\", path)\n",
+        "        break\n",
+        "\n",
+        "    if state in visited:\n",
+        "        continue\n",
+        "\n",
+        "    visited.add(state)\n",
+        "\n",
+        "    zero = state.index(0)\n",
+        "    row, col = divmod(zero, 4)\n",
+        "\n",
+        "    moves = []\n",
+        "\n",
+        "    if row > 0:\n",
+        "        moves.append((-1, 0, \"Up\"))\n",
+        "    if row < 3:\n",
+        "        moves.append((1, 0, \"Down\"))\n",
+        "    if col > 0:\n",
+        "        moves.append((0, -1, \"Left\"))\n",
+        "    if col < 3:\n",
+        "        moves.append((0, 1, \"Right\"))\n",
+        "\n",
+        "    for dr, dc, move in moves:\n",
+        "        new = list(state)\n",
+        "        pos = (row + dr) * 4 + col + dc\n",
+        "        new[zero], new[pos] = new[pos], new[zero]\n",
+        "\n",
+        "        queue.append((tuple(new), path + [move]))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pRu9Zmq-zVUv",
+        "outputId": "70586389-d914-44c3-f005-ae2931dd5603"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Solution: ['Right']\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
